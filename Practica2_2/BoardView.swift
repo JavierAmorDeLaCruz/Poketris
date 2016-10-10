@@ -36,13 +36,13 @@ protocol BoardViewDataSource: class {
 }
 
 
-@IBDesignable
+//@IBDesignable
 class BoardView: UIView {
     
     // Data-Source para obtener los datos del tablero a pintar
     weak var dataSource: BoardViewDataSource!
     
-    //??
+    
     var boxSize: CGFloat!
     
     @IBInspectable
@@ -74,7 +74,14 @@ class BoardView: UIView {
         let rows = dataSource.numberOfRows(in: self)
         let columns = dataSource.numberOfColumns(in: self)
 
+        let rect = CGRect(x: 0, y:0, width: box2Point(columns), height: box2Point(rows))
+        let path = UIBezierPath(rect: rect)
         
+        bgColor.setFill()
+        UIColor.blue.setStroke()
+        path.lineWidth = 2
+        path.stroke()
+        path.fill()
     }
     
     
@@ -117,12 +124,11 @@ class BoardView: UIView {
         boxSize = min(boxWidth, boxHeight)
     }
     
-    // Transforma una coordenada box a puntos. ??
+    // Transforma una coordenada box a puntos.
     private func box2Point(_ box: Int) -> CGFloat {
         
-        // return CGFloat(box) = boxSize
-        let box = boxSize
-        return CGFloat(box!)
+        return CGFloat(box) * boxSize
+      
     }
 
 

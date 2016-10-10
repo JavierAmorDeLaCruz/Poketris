@@ -82,6 +82,7 @@
                         <color key="backgroundColor" red="0.45593452909666854" green="0.90588235294117647" blue="0.50181413829658283" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="blockView" destination="wEe-hl-KvR" id="A7q-vj-gxg"/>
                         <outlet property="boardView" destination="w87-7l-Kt1" id="IMQ-uX-kWk"/>
                     </connections>
                 </viewController>

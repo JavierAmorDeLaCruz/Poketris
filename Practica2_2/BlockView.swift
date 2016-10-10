@@ -29,6 +29,8 @@ class BlockView: UIView {
 
     weak var dataSource: BlockViewDataSource!
     
+    var boxSize: CGFloat!
+    
     override func draw(_ rect: CGRect) {
         updateBoxSize()
         drawBlock()
@@ -67,8 +69,8 @@ class BlockView: UIView {
     // Calcula el tamaño actual de la box ????
     private func updateBoxSize() {
         // Tamaño del tablero
-        let rows = dataSource.numberOfRows(in: self)
-        let columns = dataSource.numberOfColumns(in: self)
+        let rows = dataSource.BlockHeight(for: self)
+        let columns = dataSource.BlockWidth(for: self)
         
         // Tamaño en puntos de la zona de la zona de la View donde voy a dibujar
         let width = bounds.size.width
@@ -83,7 +85,7 @@ class BlockView: UIView {
     
     // Transforma una coordenada box a puntos. ???
     private func box2Point(_ box: Int) -> CGFloat {
-        return CGFloat(box) = boxSize
+        return CGFloat(box) * boxSize
     }
     
     
