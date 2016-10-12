@@ -10,12 +10,14 @@ import UIKit
 
 class ViewController: UIViewController,/* ScoreDelegate, */BoardDelegate, BoardViewDataSource, BlockViewDataSource {
 
-    var board: Board!
+    var board: Board! = Board()
     var gameInProgress = false
     var timer: Timer?
+    var n=1
     
     @IBOutlet weak var boardView: BoardView!
     @IBOutlet weak var blockView: BlockView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,18 +43,51 @@ class ViewController: UIViewController,/* ScoreDelegate, */BoardDelegate, BoardV
         autoMoveDown()
     }
     
+    
+    @IBAction func moveLeft(_ sender: UIButton) {
+        board.moveLeft()
+        boardView.setNeedsDisplay()
+    }
+    
+    @IBAction func RotateLeft(_ sender: UIButton) {
+        board.rotate(toRight: false)
+    }
+   
+    @IBAction func dropDown(_ sender: UIButton) {
+        board.dropDown()
+        boardView.setNeedsDisplay()
+    }
+    
+    @IBAction func RotateRight(_ sender: UIButton) {
+        board.rotate(toRight: true)
+        boardView.setNeedsDisplay()
+    }
+    
+    @IBAction func moveRight(_ sender: UIButton) {
+        board.moveRight()
+        boardView.setNeedsDisplay()
+    }
+ 
+    
+    
+    
+    
+    
     func autoMoveDown() {
         guard gameInProgress else {
             return
         }
+        print("Iteracion Automovedown \(n)")
+        n+=1
         board.moveDown(insertNewBlockIfNeeded: true)
         boardView.setNeedsDisplay()
+        blockView.setNeedsDisplay()
         
         let interval = 1.0
         
         timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector (autoMoveDown) , userInfo: nil, repeats: false)
         
-        timer?.fire()
+        //timer?.fire()
     }
     
     // MARK: - Implementación de métodos de Board Delegate

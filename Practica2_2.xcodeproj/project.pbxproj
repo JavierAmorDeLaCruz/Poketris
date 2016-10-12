@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77C4844F1DAE647000174702 /* imagenes in Resources */ = {isa = PBXBuildFile; fileRef = 77C4844E1DAE647000174702 /* imagenes */; };
 		77CF79FC1DAA6144009BD582 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CF79FB1DAA6144009BD582 /* AppDelegate.swift */; };
 		77CF79FE1DAA6144009BD582 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CF79FD1DAA6144009BD582 /* ViewController.swift */; };
 		77CF7A011DAA6144009BD582 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77CF79FF1DAA6144009BD582 /* Main.storyboard */; };
@@ -14,13 +15,13 @@
 		77CF7A061DAA6144009BD582 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77CF7A041DAA6144009BD582 /* LaunchScreen.storyboard */; };
 		77CF7A111DAA6171009BD582 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CF7A0D1DAA6171009BD582 /* Block.swift */; };
 		77CF7A121DAA6171009BD582 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CF7A0E1DAA6171009BD582 /* Board.swift */; };
-		77CF7A131DAA6171009BD582 /* imagenes in Resources */ = {isa = PBXBuildFile; fileRef = 77CF7A0F1DAA6171009BD582 /* imagenes */; };
 		77CF7A141DAA6171009BD582 /* Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CF7A101DAA6171009BD582 /* Texture.swift */; };
 		77CF7A181DAA630E009BD582 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CF7A171DAA630E009BD582 /* BoardView.swift */; };
 		77CF7A1A1DAA6328009BD582 /* BlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CF7A191DAA6328009BD582 /* BlockView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		77C4844E1DAE647000174702 /* imagenes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = imagenes; sourceTree = "<group>"; };
 		77CF79F81DAA6144009BD582 /* Practica2_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Practica2_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77CF79FB1DAA6144009BD582 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77CF79FD1DAA6144009BD582 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,7 +31,6 @@
 		77CF7A071DAA6144009BD582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77CF7A0D1DAA6171009BD582 /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Block.swift; path = ../../Poketris/Block.swift; sourceTree = "<group>"; };
 		77CF7A0E1DAA6171009BD582 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Board.swift; path = ../../Poketris/Board.swift; sourceTree = "<group>"; };
-		77CF7A0F1DAA6171009BD582 /* imagenes */ = {isa = PBXFileReference; lastKnownFileType = folder; name = imagenes; path = ../../Poketris/imagenes; sourceTree = "<group>"; };
 		77CF7A101DAA6171009BD582 /* Texture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Texture.swift; path = ../../Poketris/Texture.swift; sourceTree = "<group>"; };
 		77CF7A171DAA630E009BD582 /* BoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		77CF7A191DAA6328009BD582 /* BlockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockView.swift; sourceTree = "<group>"; };
@@ -66,13 +66,13 @@
 		77CF79FA1DAA6144009BD582 /* Practica2_2 */ = {
 			isa = PBXGroup;
 			children = (
-				77CF7A0F1DAA6171009BD582 /* imagenes */,
 				77CF79FB1DAA6144009BD582 /* AppDelegate.swift */,
 				77CF7A161DAA61B8009BD582 /* Modelo */,
 				77CF79FD1DAA6144009BD582 /* ViewController.swift */,
 				77CF79FF1DAA6144009BD582 /* Main.storyboard */,
 				77CF7A171DAA630E009BD582 /* BoardView.swift */,
 				77CF7A021DAA6144009BD582 /* Assets.xcassets */,
+				77C4844E1DAE647000174702 /* imagenes */,
 				77CF7A191DAA6328009BD582 /* BlockView.swift */,
 				77CF7A041DAA6144009BD582 /* LaunchScreen.storyboard */,
 				77CF7A071DAA6144009BD582 /* Info.plist */,
@@ -151,7 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77CF7A061DAA6144009BD582 /* LaunchScreen.storyboard in Resources */,
-				77CF7A131DAA6171009BD582 /* imagenes in Resources */,
+				77C4844F1DAE647000174702 /* imagenes in Resources */,
 				77CF7A031DAA6144009BD582 /* Assets.xcassets in Resources */,
 				77CF7A011DAA6144009BD582 /* Main.storyboard in Resources */,
 			);
