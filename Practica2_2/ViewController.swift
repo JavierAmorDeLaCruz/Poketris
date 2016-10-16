@@ -14,6 +14,11 @@ class ViewController: UIViewController,/* ScoreDelegate, */BoardDelegate, BoardV
     var gameInProgress = false
     var timer: Timer?
     var n=1
+    var nPartidas = 0
+    
+    @IBOutlet weak var labelRecord: UILabel!
+    @IBOutlet weak var labelPuntos: UILabel!
+    @IBOutlet weak var labelPartidas: UILabel!
     
     @IBOutlet weak var boardView: BoardView!
     @IBOutlet weak var blockView: BlockView!
@@ -37,6 +42,8 @@ class ViewController: UIViewController,/* ScoreDelegate, */BoardDelegate, BoardV
     private func startNewGame() {
         //score.newGame()
         board.newGame()
+        
+        labelPartidas.text = "Partidas: \(nPartidas)"
         
         gameInProgress = true
         
@@ -94,6 +101,7 @@ class ViewController: UIViewController,/* ScoreDelegate, */BoardDelegate, BoardV
     func gameOver() {
         print("Partida Finalizada")
         gameInProgress = false
+        nPartidas += 1
         // Crear UIAlertController
         let alert = UIAlertController(title: "Fin de la partida", message: "Pulsar OK para jugar de nuevo", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title:"OK",
