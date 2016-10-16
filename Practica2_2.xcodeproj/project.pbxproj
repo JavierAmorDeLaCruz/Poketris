@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		075364C61DB3B8A600FA1836 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075364C51DB3B8A600FA1836 /* Score.swift */; };
 		07BD787A1DB23EA0000D1093 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD78771DB23EA0000D1093 /* Block.swift */; };
 		07BD787B1DB23EA0000D1093 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD78781DB23EA0000D1093 /* Board.swift */; };
 		07BD787C1DB23EA0000D1093 /* Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD78791DB23EA0000D1093 /* Texture.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		075364C51DB3B8A600FA1836 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		07BD78771DB23EA0000D1093 /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		07BD78781DB23EA0000D1093 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		07BD78791DB23EA0000D1093 /* Texture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Texture.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				77CF7A191DAA6328009BD582 /* BlockView.swift */,
 				77CF7A041DAA6144009BD582 /* LaunchScreen.storyboard */,
 				77CF7A071DAA6144009BD582 /* Info.plist */,
+				075364C51DB3B8A600FA1836 /* Score.swift */,
 			);
 			path = Practica2_2;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			files = (
 				07BD787C1DB23EA0000D1093 /* Texture.swift in Sources */,
 				07BD787A1DB23EA0000D1093 /* Block.swift in Sources */,
+				075364C61DB3B8A600FA1836 /* Score.swift in Sources */,
 				77CF79FE1DAA6144009BD582 /* ViewController.swift in Sources */,
 				77CF7A181DAA630E009BD582 /* BoardView.swift in Sources */,
 				77CF7A1A1DAA6328009BD582 /* BlockView.swift in Sources */,

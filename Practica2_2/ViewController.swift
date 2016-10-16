@@ -8,17 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController,/* ScoreDelegate, */BoardDelegate, BoardViewDataSource, BlockViewDataSource {
+class ViewController: UIViewController, ScoreDelegate, BoardDelegate, BoardViewDataSource, BlockViewDataSource {
 
     var board: Board! = Board()
+    var score: Score! = Score()
     var gameInProgress = false
     var timer: Timer?
     var n=1
     var nPartidas = 0
     
-    @IBOutlet weak var labelRecord: UILabel!
-    @IBOutlet weak var labelPuntos: UILabel!
     @IBOutlet weak var labelPartidas: UILabel!
+    @IBOutlet weak var labelPuntuacion: UILabel!
+    @IBOutlet weak var labelRecord: UILabel!
     
     @IBOutlet weak var boardView: BoardView!
     @IBOutlet weak var blockView: BlockView!
@@ -27,7 +28,7 @@ class ViewController: UIViewController,/* ScoreDelegate, */BoardDelegate, BoardV
     override func viewDidLoad() {
         super.viewDidLoad()
         board.delegate = self
-        //score.delegate = self
+        score.delegate = self
         
         boardView.dataSource = self
         blockView.dataSource = self
@@ -40,10 +41,12 @@ class ViewController: UIViewController,/* ScoreDelegate, */BoardDelegate, BoardV
     }
     
     private func startNewGame() {
-        //score.newGame()
+        score.newGame()
         board.newGame()
         
         labelPartidas.text = "Partidas: \(nPartidas)"
+        labelPuntuacion.text = String(score.puntuacion)
+        labelRecord.text = String(score.record)
         
         gameInProgress = true
         
@@ -112,8 +115,16 @@ class ViewController: UIViewController,/* ScoreDelegate, */BoardDelegate, BoardV
     }
     
     func rowCompleted() {
+        sumaPuntos()
         print("Fila Completada")
-        
+    }
+    
+    // MARK: - Implementación de métodos de ScoreDelegate
+    func sumaPuntos() {
+        score.puntuacion += 1
+        score.newRecord()
+        labelRecord.text = String(score.record)
+        labelPuntuacion.text = String(score.puntuacion)
     }
     
     
