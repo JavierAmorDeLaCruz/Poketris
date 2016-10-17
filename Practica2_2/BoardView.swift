@@ -73,8 +73,9 @@ class BoardView: UIView {
         // Tamaño del tablero
         let rows = dataSource.numberOfRows(in: self)
         let columns = dataSource.numberOfColumns(in: self)
-
-        let rect = CGRect(x: 0, y:0, width: box2Point(columns), height: box2Point(rows))
+        let x = (bounds.size.width - box2Point(columns)) / 2
+        
+        let rect = CGRect(x: x, y:0, width: box2Point(columns), height: box2Point(rows))
         let path = UIBezierPath(rect: rect)
         
         bgColor.setFill()
@@ -87,8 +88,8 @@ class BoardView: UIView {
     
     // Dibuja un cuadrado en la pos. indicada
     private func drawBox(row: Int, column: Int){
-        
-        let x = box2Point(column)
+        let columns = dataSource.numberOfColumns(in: self)
+        let x = box2Point(column) + (bounds.size.width - box2Point(columns)) / 2
         let y = box2Point(row)
         let width = box2Point(1)
         let height = box2Point(1)

@@ -46,7 +46,7 @@ class ViewController: UIViewController, ScoreDelegate, BoardDelegate, BoardViewD
         
         labelPartidas.text = "Partidas: \(nPartidas)"
         labelPuntuacion.text = String(score.puntuacion)
-        labelRecord.text = String(score.record)
+        labelRecord.text = String("Record: \(score.record)")
         
         gameInProgress = true
         
@@ -123,7 +123,7 @@ class ViewController: UIViewController, ScoreDelegate, BoardDelegate, BoardViewD
     func sumaPuntos() {
         score.puntuacion += 1
         score.newRecord()
-        labelRecord.text = String(score.record)
+        labelRecord.text = String("Record: \(score.record)")
         labelPuntuacion.text = String(score.puntuacion)
     }
     

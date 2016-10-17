@@ -26,7 +26,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="w87-7l-Kt1" customClass="BoardView" customModule="Practica2_2" customModuleProvider="target">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sft-ou-n1p">
                                 <constraints>
@@ -42,7 +42,7 @@
                                     <constraint firstAttribute="width" secondItem="vQH-L7-ffr" secondAttribute="height" multiplier="2:1" constant="-20" id="7Nz-XT-Yhj"/>
                                     <constraint firstAttribute="height" constant="31" id="O6t-7d-b2b"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -106,7 +106,7 @@
                                 </connections>
                             </button>
                             <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="wEe-hl-KvR" customClass="BlockView" customModule="Practica2_2" customModuleProvider="target">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.77700734699999996" blue="0.46066568530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="Mjw-ji-vcg"/>
                                     <constraint firstAttribute="width" secondItem="wEe-hl-KvR" secondAttribute="height" multiplier="61:66" id="wto-Dk-aUb"/>
