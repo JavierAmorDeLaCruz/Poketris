@@ -27,6 +27,12 @@
                             </imageView>
                             <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="w87-7l-Kt1" customClass="BoardView" customModule="Practica2_2" customModuleProvider="target">
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fob-Ar-x0K" appends="YES" id="zuI-ZM-Lcx"/>
+                                    <outletCollection property="gestureRecognizers" destination="y77-lZ-Zq5" appends="YES" id="3so-8I-JSh"/>
+                                    <outletCollection property="gestureRecognizers" destination="xtC-uG-4ST" appends="YES" id="q6B-ZK-8rC"/>
+                                </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sft-ou-n1p">
                                 <constraints>
@@ -161,6 +167,21 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="fob-Ar-x0K">
+                    <connections>
+                        <action selector="Swipe:" destination="BYZ-38-t0r" id="pYP-xo-jvn"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="y77-lZ-Zq5">
+                    <connections>
+                        <action selector="PressDown:" destination="BYZ-38-t0r" id="oIC-6W-xcn"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <rotationGestureRecognizer id="xtC-uG-4ST">
+                    <connections>
+                        <action selector="rotation:" destination="BYZ-38-t0r" id="Lyc-mL-2sS"/>
+                    </connections>
+                </rotationGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-100" y="123.68815592203899"/>
         </scene>

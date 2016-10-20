@@ -32,6 +32,19 @@ class ViewController: UIViewController, ScoreDelegate, BoardDelegate, BoardViewD
         
         boardView.dataSource = self
         blockView.dataSource = self
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.Swipe(_:)))
+        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+        boardView.addGestureRecognizer(swipeRight)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.Swipe(_:)))
+        swipeRight.direction = UISwipeGestureRecognizerDirection.left
+        boardView.addGestureRecognizer(swipeLeft)
+        
+        let rotation = UIRotationGestureRecognizer(target: self, action:
+            #selector(ViewController.rotation(_:)))
+        boardView.addGestureRecognizer(rotation)
+        
         startNewGame()
     }
 
@@ -39,6 +52,11 @@ class ViewController: UIViewController, ScoreDelegate, BoardDelegate, BoardViewD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+
+
+    
     
     private func startNewGame() {
         score.newGame()
@@ -53,14 +71,66 @@ class ViewController: UIViewController, ScoreDelegate, BoardDelegate, BoardViewD
         autoMoveDown()
     }
     
+
+    @IBAction func Swipe(_ gesture: UIGestureRecognizer) {
+        
+      if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+        
+        switch swipeGesture.direction {
+            
+        case UISwipeGestureRecognizerDirection.right:
+            board.moveRight()
+            boardView.setNeedsDisplay()
+            
+        case UISwipeGestureRecognizerDirection.left:
+            board.moveLeft()
+            boardView.setNeedsDisplay()
+        
+        default:
+            return
+        }
+      }
+    }
     
     @IBAction func moveLeft(_ sender: UIButton) {
         board.moveLeft()
         boardView.setNeedsDisplay()
     }
     
+    @IBAction func rotation(_ gesture: UIGestureRecognizer) {
+        
+        if let rotationGesture = gesture as? UIRotationGestureRecognizer {
+          
+          if (rotationGesture.state == UIGestureRecognizerState.ended){
+            
+            if rotationGesture.rotation < 0 {
+                board.rotate(toRight: false)
+                boardView.setNeedsDisplay()
+            }
+            else{
+                board.rotate(toRight: true)
+                boardView.setNeedsDisplay()
+            }
+           
+        }
+        }
+    }
+    
+    
+    @IBAction func RotateRight(_ sender: UIButton) {
+        board.rotate(toRight: true)
+        boardView.setNeedsDisplay()
+    }
+    
     @IBAction func RotateLeft(_ sender: UIButton) {
         board.rotate(toRight: false)
+    }
+    
+    @IBAction func PressDown(_ sender: UILongPressGestureRecognizer) {
+        
+        if sender.state != .began { return }
+        board.dropDown()
+        boardView.setNeedsDisplay()
     }
    
     @IBAction func dropDown(_ sender: UIButton) {
@@ -68,10 +138,7 @@ class ViewController: UIViewController, ScoreDelegate, BoardDelegate, BoardViewD
         boardView.setNeedsDisplay()
     }
     
-    @IBAction func RotateRight(_ sender: UIButton) {
-        board.rotate(toRight: true)
-        boardView.setNeedsDisplay()
-    }
+
     
     @IBAction func moveRight(_ sender: UIButton) {
         board.moveRight()
