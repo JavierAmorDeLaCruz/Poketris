@@ -142,6 +142,7 @@ class ViewController: UIViewController, ScoreDelegate, BoardDelegate, BoardViewD
     
     @IBAction func RotateLeft(_ sender: UIButton) {
         board.rotate(toRight: false)
+        boardView.setNeedsDisplay()
     }
     
     @IBAction func PressDown(_ sender: UILongPressGestureRecognizer) {
