@@ -33,6 +33,10 @@ class ViewController: UIViewController, ScoreDelegate, BoardDelegate, BoardViewD
         boardView.dataSource = self
         blockView.dataSource = self
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.ProcessTap(_:)))
+        tap.numberOfTapsRequired = 1
+        boardView.addGestureRecognizer(tap)
+        
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.Swipe(_:)))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
         boardView.addGestureRecognizer(swipeRight)
@@ -71,6 +75,20 @@ class ViewController: UIViewController, ScoreDelegate, BoardDelegate, BoardViewD
         autoMoveDown()
     }
     
+    @IBAction func ProcessTap(_ sender: UITapGestureRecognizer) {
+        
+        if sender.state == .recognized {
+            
+            timer?.invalidate()
+            
+            board.moveDown(insertNewBlockIfNeeded: true)
+            boardView.setNeedsDisplay()
+            
+            let interval = 1.0
+            timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector (autoMoveDown) , userInfo: nil, repeats: false)
+        }
+        
+    }
 
     @IBAction func Swipe(_ gesture: UIGestureRecognizer) {
         

@@ -36,6 +36,7 @@
                                     <outletCollection property="gestureRecognizers" destination="fob-Ar-x0K" appends="YES" id="zuI-ZM-Lcx"/>
                                     <outletCollection property="gestureRecognizers" destination="y77-lZ-Zq5" appends="YES" id="3so-8I-JSh"/>
                                     <outletCollection property="gestureRecognizers" destination="xtC-uG-4ST" appends="YES" id="q6B-ZK-8rC"/>
+                                    <outletCollection property="gestureRecognizers" destination="sXm-bJ-Dzc" appends="YES" id="HCI-4Z-daU"/>
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQH-L7-ffr">
@@ -195,6 +196,11 @@
                         <action selector="rotation:" destination="BYZ-38-t0r" id="Lyc-mL-2sS"/>
                     </connections>
                 </rotationGestureRecognizer>
+                <tapGestureRecognizer id="sXm-bJ-Dzc">
+                    <connections>
+                        <action selector="ProcessTap:" destination="BYZ-38-t0r" id="ZbG-Qr-3k0"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-101.25" y="122.5"/>
         </scene>
