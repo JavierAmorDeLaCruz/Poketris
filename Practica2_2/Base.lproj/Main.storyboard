@@ -17,7 +17,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="center" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Poketris.png" translatesAutoresizingMaskIntoConstraints="NO" id="7mO-Ma-tiK">
@@ -135,6 +135,7 @@
                             <constraint firstItem="lrj-BE-n4Y" firstAttribute="leading" secondItem="Iea-mh-GeH" secondAttribute="trailing" constant="27" id="B6g-u4-5ic"/>
                             <constraint firstItem="lQy-jx-aKw" firstAttribute="leading" secondItem="7fZ-dN-hib" secondAttribute="trailing" constant="8" id="Cde-KX-JMY"/>
                             <constraint firstItem="7mO-Ma-tiK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="2" id="Dhb-HU-Zcn"/>
+                            <constraint firstItem="7mO-Ma-tiK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EsI-6p-4TK"/>
                             <constraint firstItem="lrj-BE-n4Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gzb-DA-0wO"/>
                             <constraint firstItem="lQy-jx-aKw" firstAttribute="top" secondItem="w87-7l-Kt1" secondAttribute="bottom" constant="21" id="HBK-Gd-5dP"/>
                             <constraint firstItem="w87-7l-Kt1" firstAttribute="top" secondItem="vQH-L7-ffr" secondAttribute="bottom" constant="8" id="JxY-vl-vfK"/>
@@ -166,11 +167,16 @@
                             <constraint firstItem="sft-ou-n1p" firstAttribute="top" secondItem="7mO-Ma-tiK" secondAttribute="bottom" constant="16" id="qxB-ci-BHE"/>
                             <constraint firstItem="vQH-L7-ffr" firstAttribute="centerY" secondItem="sft-ou-n1p" secondAttribute="centerY" constant="1" id="rK2-7n-r1H"/>
                             <constraint firstItem="vQH-L7-ffr" firstAttribute="top" secondItem="7mO-Ma-tiK" secondAttribute="bottom" constant="17" id="ttF-FN-rZf"/>
-                            <constraint firstItem="7mO-Ma-tiK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="ud1-CJ-q7V"/>
+                            <constraint firstItem="7mO-Ma-tiK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="54" id="ud1-CJ-q7V"/>
                             <constraint firstItem="Hf7-HT-kE4" firstAttribute="top" secondItem="wEe-hl-KvR" secondAttribute="bottom" constant="17" id="wyl-e3-udm"/>
                             <constraint firstItem="Iea-mh-GeH" firstAttribute="top" secondItem="w87-7l-Kt1" secondAttribute="bottom" constant="21" id="yX8-bF-h2T"/>
                             <constraint firstItem="wEe-hl-KvR" firstAttribute="centerY" secondItem="7mO-Ma-tiK" secondAttribute="centerY" id="zPr-WA-kbt"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ud1-CJ-q7V"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="blockView" destination="wEe-hl-KvR" id="A7q-vj-gxg"/>
